@@ -5,7 +5,7 @@ class Application_Model_OrderProcess
 
   public function add($order)
   {
-    $keys = array('person','base_dish','rice','power','drink'); 
+    $keys = array('person','base_dish','power','drink'); 
     foreach($keys as $key)
     {
       if (empty($order->$key))
