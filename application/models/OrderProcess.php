@@ -5,6 +5,15 @@ class Application_Model_OrderProcess
 
   public function add($order)
   {
+    $keys = array('person','base_dish','rice','power','drink'); 
+    foreach($keys as $key)
+    {
+      if (empty($order->$key))
+      {
+        throw new Exception('Field may not be empty: '.$key);
+      }
+    }
+
     $dbTable = new Application_Model_DbTable_Order();
     $dbTable->insert((array)$order);
   }
