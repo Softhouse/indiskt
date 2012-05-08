@@ -100,12 +100,12 @@ class Application_Model_OrderProcess
     return $dbTable->fetchAll($select);
   }
 
-  public function getPeople()
+  public function getPeople($day)
   {
     $dbTable = new Application_Model_DbTable_Order();
     $select = $dbTable->select()
       ->from($dbTable, 'person')
-      ->distinct()
+      ->where('day = ?', $day)
       ->order('person');
     $rows = $dbTable->fetchAll($select);
     $people = array();
