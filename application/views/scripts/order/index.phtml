@@ -44,11 +44,13 @@
               <option value="xfrehaa">Fredrik Håård</option>
               <option value="xmatand">Mattias Andersson</option>
               </optgroup>
+<!--email_off-->
               <optgroup label="Alla">
               <?php foreach ($this->people as $person): ?>
               <option value="<?= $this->escape($person); ?>"><?= $this->escape($person); ?></option>
               <?php endforeach; ?>
               </optgroup>
+<!--/email_off-->
             </select>
 					</div>
 					<div class="inputField order">
