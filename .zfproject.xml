@@ -18,6 +18,10 @@
           <actionMethod actionName="show"/>
           <actionMethod actionName="summary"/>
         </controllerFile>
+        <controllerFile controllerName="Postal">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="send"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
@@ -85,6 +89,12 @@
           <viewControllerScriptsDirectory forControllerName="Order">
             <viewScriptFile forActionName="summary"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Postal">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Postal">
+            <viewScriptFile forActionName="send"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
@@ -127,6 +137,10 @@
             <testApplicationActionMethod forActionName="add"/>
             <testApplicationActionMethod forActionName="show"/>
             <testApplicationActionMethod forActionName="summary"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Postal">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="send"/>
           </testApplicationControllerFile>
         </testApplicationControllerDirectory>
         <testApplicationModulesDirectory>
