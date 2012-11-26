@@ -46,7 +46,7 @@ EOF;
         ." <$email>\r\nContent-Type: text/plain;charset=UTF-8\r\nX-PHP-Originating-Script: Yes, Sir!\r\nX-Indiskt-Diet: HCHF";
 
       mail('indiskt@lists.2good.nu', 
-        self::utf8('Indian food at Gräsvik today!'),
+        self::utf8('Indian Tuesday at Gräsvik today!'),
         $message, 
         $headers);
 
