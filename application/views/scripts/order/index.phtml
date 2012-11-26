@@ -6,8 +6,12 @@
 					</div>
 					<div class="inputField">
 						<label for="base_dish">Maträtt</label>
-						<input type="text" id="base_dish" name="base_dish" class="tooltip" placeholder="Maträtt">
-						<span class="toolTipContent" id="toolTipContent">Klicka på meny länken bredvid för att välja</span>
+            <select id="base_dish" name="base_dish" class="tooltip" placeholder="Maträtt">
+              <?php foreach ($this->dishes as $dish): ?>
+                <option><?= $this->escape($dish) ?></option>
+              <?php endforeach; ?>
+            </select>
+						<span class="toolTipContent" id="toolTipContent">Klicka på menysymbolen för detaljerad meny</span>
 						<div class="meny" onclick="showMeny()" >
 						<a class="tooltip" href="#"></a>
 						</div>

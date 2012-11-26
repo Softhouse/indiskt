@@ -146,5 +146,20 @@ class Application_Model_OrderProcess
     $table->update($data, $where);
   }
 
+  public function getDishes()
+  {
+    $dbTable = new Application_Model_DbTable_Dish();
+    $select = $dbTable->select()
+      ->from($dbTable, 'name');
+    $rows = $dbTable->fetchAll($select);
+    
+    $dishes = array();
+    foreach ($rows as $row)
+    {
+       $dishes[] = $row->name;
+    }
+    return $dishes;
+  }
+
 }
 

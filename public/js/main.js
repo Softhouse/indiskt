@@ -11,13 +11,13 @@ function showMeny() {
 function pickItem(elem) {
 
 	if(elem.name == "FRITEXT") {
-		$('input[name$="base_dish"]').attr("disabled",false);
-		$('input[name$="base_dish"]').removeClass("tooltip");
+		$('#base_dish').attr("disabled",false);
+		$('#base_dish').removeClass("tooltip");
 		$("#toolTipContent").addClass("displayNone");
 	}
 	else
 	{
-		$('input[name$="base_dish"]').val(elem.name);
+		$('#base_dish').val(elem.name).attr('selected',true);
 	}
 	$("#book").addClass("hidden");
 	$("#next").addClass("arrowNextHidden");
