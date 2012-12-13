@@ -1,3 +1,7 @@
+<?php
+$this->headLink()->appendStylesheet('/css/random.css', 'screen');
+$this->headScript()->appendFile('/js/random.js');
+?>
 				<h3>Indiskt</h3>
 				<form action="/order/add" method="POST">
 					<div class="inputField">
@@ -14,8 +18,11 @@
 						<span class="toolTipContent" id="toolTipContent">Klicka på menysymbolen för detaljerad meny</span>
 						<div class="meny" onclick="showMeny()" >
 						<a class="tooltip" href="#"></a>
-						</div>
-					</div>
+            </div>
+            <div class="random" onclick="createStuffs()" title="Slumpa indisk maträtt">
+            <a class="tooltip" href="#"></a>
+            </div>
+          </div>
 					<div class="inputField">
 						<label for="rice">Ris?</label>
 						<input id="rice" name="rice" type="checkbox" value="1" checked="checked"/>

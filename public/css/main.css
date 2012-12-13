@@ -66,12 +66,13 @@ label {
 	background-image: url(../image/menu-icon.jpg);
 	background-size: 16px auto;
 	background-repeat: no-repeat;
-	top: 2px;
 	position: relative;
 	float: right;
 	left: -46px;
 	cursor:pointer;
 	image-rendering: -moz-crisp-edges;
+  margin-bottom: -22px;
+  top: -22px 
 }
 
 .aboutLink {

@@ -1,0 +1,68 @@
+
+.Elephant {
+	position: absolute;
+	top: 0%;
+	left: -15%;
+	width: 200px;
+	height: 150px;
+	z-index: 100;
+	opacity: 1;
+	background: url(/image/elep.png) no-repeat 0 center;
+	background-size: 82% auto;
+	-webkit-transition-timing-function: linear;
+	-webkit-transition-duration: 3s;
+	-moz-transition-timing-function: linear;
+	-moz-transition: 4s;
+	-o-transition-timing-function: linear;
+	-o-transition-duration: 3s;
+	transition-timing-function: linear;
+	transition-duration: 3s;
+}
+
+.Ganesh {
+	position: absolute;
+	top: 0%;
+	left: 115%;
+	width: 200px;
+	height: 150px;
+	z-index: 100;
+	opacity: 1;
+	background: url(/image/ganesh.png) no-repeat 0 center;
+	background-size: 82% auto;
+	-webkit-transition-timing-function: linear;
+	-webkit-transition-duration: 3s;
+	-moz-transition-timing-function: linear;
+	-moz-transition: 4s;
+	-o-transition-timing-function: linear;
+	-o-transition-duration: 3s;
+	transition-timing-function: linear;
+	transition-duration: 3s;
+}
+
+.flyOffGanesh {
+	left: -15% !important;
+}
+
+.flyOffElephant {
+	left: 115% !important;
+}
+
+.random {
+ width: 32px;
+ background-image: url('http://i288.photobucket.com/albums/ll165/skaterchick88_2008/th_600px-2-Dice-Icon_svg-2.png');
+
+ background-size: 32px auto;
+background-repeat: no-repeat;
+ width: 10px;
+ height: 10px;
+ top: -22px;
+position: relative;
+float: right;
+
+cursor: pointer;
+
+ height: 32px;
+
+ width: 32px;
+ margin-bottom: -32px;
+}
