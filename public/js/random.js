@@ -8,7 +8,7 @@ function createStuffs() {
 		createObject("Ganesh");
 	}
 	playTune();
-	var dishes = new Array("Kyckling vindaloo", "Kyckling curry", "Kyckling Masala", "Butter Chicken", "Kyckling Tikka Masala", "Kyckling Karahi", "Kyckling Saag", "Kyckling Panear", "Shahi pannear");
+	var dishes = new Array("Kyckling vindaloo", "Kyckling curry", "Kyckling Masala", "Butter Chicken", "Kyckling Tikka Masala", "Kyckling Karahi", "Kyckling Saag", "Palak Panear", "Shahi pannear");
 	var dish = Math.floor(Math.random() * dishes.length)
 	
 	setTimeout(function() {
