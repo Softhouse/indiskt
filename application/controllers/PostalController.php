@@ -27,7 +27,9 @@ class PostalController extends Zend_Controller_Action
       $message =<<<EOF
 Hej!
 
-If you want to join the Indian food order today, please fill in the form at http://indiskt.blekinge.it/order/ prior to 10:15.
+Softhouse employees and subcontractors are invited to join the Indian Tuesday at the Softhouse office.
+
+If you want to participate today, please fill in the form at http://indiskt.blekinge.it/order/ prior to 10:15.
 
 I leave from Softhouse at 11:25 to pick up the food.
 
@@ -46,7 +48,7 @@ EOF;
         ." <$email>\r\nContent-Type: text/plain;charset=UTF-8\r\nX-PHP-Originating-Script: Yes, Sir!\r\nX-Indiskt-Diet: HCHF";
 
       mail('indiskt@lists.2good.nu', 
-        self::utf8('Indian Tuesday at Gräsvik today!'),
+        self::utf8('Indian Tuesday at Softhouse office!'),
         $message, 
         $headers);
 
