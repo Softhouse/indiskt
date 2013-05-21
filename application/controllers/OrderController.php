@@ -24,7 +24,7 @@ class OrderController extends Zend_Controller_Action
     $orderProcess = new Application_Model_OrderProcess();
     $this->view->people = $orderProcess->getPeople($this->today);
     $this->view->powers = $orderProcess->getPowers();
-    $this->view->dishes = $orderProcess->getDishes();
+    $this->view->dishes = array_merge(array(''),$orderProcess->getDishes());
   }
 
   public function addAction()
