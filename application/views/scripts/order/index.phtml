@@ -2,7 +2,7 @@
 $this->headLink()->appendStylesheet('/css/random.css', 'screen');
 $this->headScript()->appendFile('/js/random.js');
 ?>
-				<h3>Indiskt</h3>
+        <h3>Indiskt</h3>
 				<form action="/order/add" method="POST">
 					<div class="inputField">
 						<label for="person">UID/e-postadress</label>
@@ -52,7 +52,7 @@ $this->headScript()->appendFile('/js/random.js');
               <option value="">(ingen)</option>
               <option value="">David via Payson</option>
               <optgroup label="Snabbval">
-              <option value="David">David (kontant)</option>
+              <option value="David">David (kontant eller via Swish)</option>
               <option value="xfrehaa">Fredrik Håård</option>
               <option value="xmatand">Mattias Andersson</option>
               </optgroup>
@@ -67,9 +67,19 @@ $this->headScript()->appendFile('/js/random.js');
 					</div>
 					<div class="inputField order">
 						<input name="add" type="submit" value="Lägg till beställning" class="orderButton">
-					</div>
-					<p class="note">Efter beställning kan du betala till David via Payson.</p>
-					<a href="https://www.payson.se" title="Payson internetbetalningar" class="payson">Kortbetalning online</a>
+          </div>
+
+          <p class="note">Beställning ska göras innan klockan 10:15. Om du är 
+sen, bekräfta med David innan du beställer.</p>
+
+          <p class="note">Efter beställning kan du betala 
+till David via <a href="https://www.payson.se" title="Payson 
+internetbetalningar">Payson</a>. Du kan också betala till David via <a 
+href="https://www.getswish.se/">Swish</a> genom att skicka 60 kr till 
+0768-832493.</p>
+
+<p class="note">Är du med i <a href="http://lists.blekinge.it/listinfo/indiskt">e-postlistan</a> ännu?</p>
+
 					<a href="/order/summary" class="summary">Sammanställning</a>
         </form>
 
