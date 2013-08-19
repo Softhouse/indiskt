@@ -78,15 +78,12 @@ width:800px;
 <td><?= $entry->rice ? 'Med ris' : 'Utan ris' ?></td>
 <td><?= $entry->drink ?></td>
 <td>
-<?php if ($entry->paysonref): ?>
-<img src="/payson/payson_betald_btn.png" alt="Betald via Payson" width="84" height="21" title="Payson-referens: <?= $entry->paysonref ?>">
-<?php elseif ($entry->paid_to == $entry->person): ?>
+<?php if ($entry->paid_to == $entry->person): ?>
 Betalar själv
 <?php elseif ($entry->paid_to && $entry->amount_paid): ?>
 Betalat till <?= $entry->paid_to ?>
 <?php else: ?>
 Nej.
-<a href="/payson/payment?refNr=<?= $entry->id ?>&email=<?= $this->escape($entry->person) ?>"  width="93" height="30" title="Kostar 7 kr extra"><img src="/payson/payson_betala_btn.png" alt="Betala till David via Payson"/></a>
 <?php endif;?>
 </td>
 <?php if (!$entry->amount_paid): ?>
