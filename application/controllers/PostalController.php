@@ -39,6 +39,9 @@ o If some of you order pizza, I'd like one of you to join us to pick up the food
 o Everyone must help to clean up the tables after lunch - use the Boy Scout Rule! ("Always leave the campground cleaner than you found it.")
 o Please put your empty soda can in the recycle bin next to the ice cream fridge
 
+Payment via Swish preferred - see https://www.getswish.se/ for more information.
+
+
 Cheers,
 
 $name
