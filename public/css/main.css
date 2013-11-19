@@ -261,3 +261,18 @@ label {
 .view .desktop {
 	display: none;
 }
+
+td.summary-person {
+  max-width:200px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+td.summary-dish{
+  max-width:150px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
