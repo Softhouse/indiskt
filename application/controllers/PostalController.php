@@ -31,7 +31,7 @@ Softhouse employees and subcontractors are invited to join the Indian Tuesday at
 
 If you want to participate today, please fill in the form at http://indiskt.blekinge.it/order/ prior to 10:15.
 
-Important: New payment routine!
+Important: Price raised to 65 kr! Don't expect me to have change if you pay cash.
 
 Cash payment to me is only possible between 10:00 and 10:15.
 
