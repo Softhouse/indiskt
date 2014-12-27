@@ -1,0 +1,16 @@
+{
+    "name": "indiskt",
+    "description": "Indiskt",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Erikssson",
+            "email": "david.eriksson@softhouse.se"
+        }
+    ],
+    "require": {
+        "zendframework/zendframework1": "1.12.9",
+        "phpunit/phpunit": "4.3.5"
+    }
+}

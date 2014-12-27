@@ -1,0 +1,28 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+set -e
+
+if [ \! -f $OPENSHIFT_DATA_DIR/application.ini ]; then
+  if [ -f $OPENSHIFT_REPO_DIR/application/configs/application.ini ]; then
+    mv $OPENSHIFT_REPO_DIR/application/configs/application.ini $OPENSHIFT_DATA_DIR/application.ini
+  elif [ -f $OPENSHIFT_REPO_DIR/application/configs/application.ini.template ]; then 
+    cp $OPENSHIFT_REPO_DIR/application/configs/application.ini.template $OPENSHIFT_DATA_DIR/application.ini
+  else
+    echo "Neither application.ini nor application.ini.template was found!" >&2
+    exit 1
+  fi
+fi
+
+rm -f $OPENSHIFT_REPO_DIR/application/configs/application.ini
+ln -sf $OPENSHIFT_DATA_DIR/application.ini $OPENSHIFT_REPO_DIR/application/configs/application.ini
+
+sed -i \
+  -e 's/^\(resources.db.params.username *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_USERNAME'"/' \
+  -e 's/^\(resources.db.params.password *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_PASSWORD'"/' \
+  -e 's/^\(resources.db.params.host *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_HOST'"/' \
+  -e 's/^\(resources.log.stream.writerParams.stream *=\).*/\1 "'$OPENSHIFT_DATA_DIR'/application.log"/' \
+  $OPENSHIFT_DATA_DIR/application.ini
+

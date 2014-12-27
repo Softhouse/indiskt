@@ -1,5 +1,6 @@
 ; vim: syntax=dosini
 [production]
+phpSettings.date.timezone = Europe/Stockholm
 phpSettings.display_startup_errors = 0
 phpSettings.display_errors = 0
 includePaths.library = APPLICATION_PATH "/../library"
@@ -14,6 +15,9 @@ resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/"
 resources.db.adapter       = "PDO_MYSQL"
 resources.db.params.host   = "localhost"
 resources.db.params.charset = "utf8"
+resources.db.params.dbname = "indiskt"
+resources.db.params.username   = "indiskt"
+resources.db.params.password   = ""
 
 [staging : production]
 
