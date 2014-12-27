@@ -23,6 +23,5 @@ sed -i \
   -e 's/^\(resources.db.params.username *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_USERNAME'"/' \
   -e 's/^\(resources.db.params.password *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_PASSWORD'"/' \
   -e 's/^\(resources.db.params.host *=\).*/\1 "'$OPENSHIFT_MYSQL_DB_HOST'"/' \
-  -e 's/^\(resources.log.stream.writerParams.stream *=\).*/\1 "'$OPENSHIFT_DATA_DIR'/application.log"/' \
   $OPENSHIFT_DATA_DIR/application.ini
 
