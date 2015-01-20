@@ -32,7 +32,7 @@ class PostalController extends Zend_Controller_Action
 
         if (!$name || !$email || !$phone)
         {
-            $this->getResponse()->setStatusCode(400);
+            $this->getResponse()->setHttpResponseCode(400);
             return;
         }
 
