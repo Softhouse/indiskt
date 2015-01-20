@@ -3,10 +3,15 @@
 class PostalController extends Zend_Controller_Action
 {
 
+    private $_postRedirectGet;
+    private $_mandrillKey;
+
     public function init()
     {
       $this->_postRedirectGet = $this->_helper->getHelper('Redirector');
       $this->_postRedirectGet->setCode(303);
+
+      $this->_mandrillKey = $this->getInvokeArg('bootstrap')->getOption('mandrill')->key;
     }
 
     public function indexAction()
@@ -23,6 +28,13 @@ class PostalController extends Zend_Controller_Action
     {
       $name = filter_var($this->_getParam('name'), FILTER_SANITIZE_STRING);
       $email = filter_var($this->_getParam('email'), FILTER_SANITIZE_EMAIL);
+      $phone = filter_var($this->_getParam('phone'), FILTER_SANITIZE_EMAIL);
+
+        if (!$name || !$email || !$phone)
+        {
+            $this->getResponse()->setStatusCode(400);
+            return;
+        }
 
       $message =<<<EOF
 Hej!
@@ -31,12 +43,13 @@ Softhouse employees and subcontractors are invited to join the Indian Tuesday at
 
 If you want to participate today, please fill in the form at http://indiskt.blekinge.it/order/ prior to 10:15.
 
-Important: Price raised to 65 kr! Don't expect me to have change if you pay cash.
+Payment methods, in order of preference:
 
-Cash payment to me is only possible between 10:00 and 10:15.
+1. Swish me at $phone - much preferred!
+2. Join me and pay at the restaurant
+3. Cash payments - only between 10:00 and 10:15
 
-If you are occupied at that time, you can pay via Swish (https://www.getswish.se/) or send a friend.
-
+If you are prevented from all of the above, ask a friend! :-)
 
 I leave from Softhouse at 11:25 to pick up the food.
 
@@ -53,15 +66,29 @@ Cheers,
 $name
 EOF;
 
-      $headers = 'From: '.self::utf8($name)
-        ." <$email>\r\nContent-Type: text/plain;charset=UTF-8\r\nX-PHP-Originating-Script: Yes, Sir!\r\nX-Indiskt-Diet: HCHF";
+        $mandrill = new Mandrill($this->_mandrillKey);
+        $parameters = array(
+            'text' => $message,
+            'subject' => 'Indian Tuesday at Softhouse office!',
+            'to' => array(
+                array('email' => 'indiskt@lists.2good.nu')
+            ),
+            'from_name' => $name,
+            'from_email' => $email,
+            'headers' => array('Content-Type' => 'text/plain; charset=UTF-8"'),
+            'auto_html' => true,
+            'track_opens' => true,
+            'track_clicks' => true,
+        );
+        try {
+            $result = $mandrill->messages->send($parameters);
+            error_log(json_encode($result));
+        } catch (Mandrill_Error $e) {
+            error_log('A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage());
+        }
 
-      mail('indiskt@lists.2good.nu', 
-        self::utf8('Indian Tuesday at Softhouse office!'),
-        $message, 
-        $headers);
 
-      $this->_postRedirectGet->gotoUrl('/order/');
+        $this->_postRedirectGet->gotoUrl('/order/');
     }
 
 
