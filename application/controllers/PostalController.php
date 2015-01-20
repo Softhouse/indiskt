@@ -3,6 +3,9 @@
 class PostalController extends Zend_Controller_Action
 {
 
+    /**
+     * @var Zend_Controller_Action_Helper_Redirector
+     */
     private $_postRedirectGet;
     private $_mandrillKey;
 
@@ -12,6 +15,7 @@ class PostalController extends Zend_Controller_Action
       $this->_postRedirectGet->setCode(303);
 
       $this->_mandrillKey = $this->getInvokeArg('bootstrap')->getOption('mandrill')->key;
+      error_log('Mandrill key: '.$this->_mandrillKey);
     }
 
     public function indexAction()
