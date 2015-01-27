@@ -14,9 +14,10 @@ class PostalController extends Zend_Controller_Action
       $this->_postRedirectGet = $this->_helper->getHelper('Redirector');
       $this->_postRedirectGet->setCode(303);
 
-        error_log('options: '.var_export($this->getInvokeArg('bootstrap')->getOptions(), true));
+        $options = $this->getInvokeArg('bootstrap')->getOptions();
+        error_log('options: '.var_export($options, true));
 
-      $this->_mandrillKey = $this->getInvokeArg('bootstrap')->getOptions()->mandrill->key;
+      $this->_mandrillKey = $options['mandrill']['key'];
       error_log('Mandrill key: '.$this->_mandrillKey);
     }
 
