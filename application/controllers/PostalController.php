@@ -15,7 +15,7 @@ class PostalController extends Zend_Controller_Action
         $this->_postRedirectGet->setCode(303);
 
         $options = $this->getInvokeArg('bootstrap')->getOptions();
-        $this->_sendGridApiKey = $options['sendgrid']['apiKey'];
+        $this->_sendGridApiKey = $options['sendGrid']['apiKey'];
         error_log('SendGrid API key: ' . $this->_sendGridApiKey);
     }
 
