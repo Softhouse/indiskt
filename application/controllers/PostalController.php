@@ -69,6 +69,7 @@ EOF;
             ->setFromName($name)
             ->setSubject('Indian Tuesday at Softhouse office!')
             ->addTo('indiskt@lists.2good.nu')
+            ->addCategory('indiskt')
             ->setHtml($message);
 
         try {
