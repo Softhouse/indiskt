@@ -56,7 +56,7 @@ class PostalController extends Zend_Controller_Action
 <ul>
 <li>If some of you order pizza, I'd like one of you to join us to pick up the food</li>
 <li>Everyone must help to clean up the tables after lunch - use the Boy Scout Rule! ("Always leave the campground cleaner than you found it.")</li>
-<li>Please put your empty soda can in the recycle bin next to the ice cream fridge</li>
+<li>Please put your empty soda can in the dedicated recycle bin</li>
 </ul>
 <p>Cheers,</p>
 <p><em>$name</em></p>
