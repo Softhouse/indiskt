@@ -32,10 +32,10 @@ class PostalController extends Zend_Controller_Action
     public function sendAction()
     {
         $name = filter_var($this->_getParam('name'), FILTER_SANITIZE_STRING);
-        $email = filter_var($this->_getParam('email'), FILTER_SANITIZE_EMAIL);
+        $emailAddress = filter_var($this->_getParam('email'), FILTER_SANITIZE_EMAIL);
         $phone = filter_var($this->_getParam('phone'), FILTER_SANITIZE_EMAIL);
 
-        if (!$name || !$email || !$phone) {
+        if (!$name || !$emailAddress || !$phone) {
             $this->getResponse()->setHttpResponseCode(400);
             return;
         }
@@ -65,7 +65,7 @@ EOF;
         $sendGrid = new SendGrid($this->_sendGridApiKey);
         $email = new SendGrid\Email();
         $email
-            ->setFrom($email)
+            ->setFrom($emailAddress)
             ->setFromName($name)
             ->setSubject('Indian Tuesday at Softhouse office!')
             ->addTo('indiskt@lists.2good.nu')
