@@ -19,7 +19,7 @@ resources.db.params.dbname = "indiskt"
 resources.db.params.username   = "indiskt"
 resources.db.params.password   = ""
 
-mandrill.key = ""
+sendGrid.apiKey = ""
 
 [staging : production]
 
