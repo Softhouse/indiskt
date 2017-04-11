@@ -83,7 +83,7 @@ class Application_Model_OrderProcess
 
     $select = $dbTable->select()
       ->where('day = ?', $day)
-      ->where('(paid_to IS NULL OR paid_to = "" OR amount_paid != 65)')
+      ->where('(paid_to IS NULL OR paid_to = "" OR amount_paid != 70)')
       ->order('person');
 
     return $dbTable->fetchAll($select);

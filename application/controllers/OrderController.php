@@ -39,7 +39,7 @@ class OrderController extends Zend_Controller_Action
 
     if (!empty($order->paid_to))
     {
-      $order->amount_paid = 65; // MAGIC NUMBER
+      $order->amount_paid = 70; // MAGIC NUMBER
     }
 
     $order->day = $this->today;
